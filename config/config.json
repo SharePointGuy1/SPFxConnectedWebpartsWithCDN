@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "git-ids-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/gitIds/GitIdsWebPart.js",
+          "manifest": "./src/webparts/gitIds/GitIdsWebPart.manifest.json"
+        }
+      ]
+    },
+    "git-repos-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/gitRepos/GitReposWebPart.js",
+          "manifest": "./src/webparts/gitRepos/GitReposWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GitIdsWebPartStrings": "lib/webparts/gitIds/loc/{locale}.js",
+    "GitReposWebPartStrings": "lib/webparts/gitRepos/loc/{locale}.js"
+  }
+}

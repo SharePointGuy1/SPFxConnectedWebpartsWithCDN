@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "git-tool-client-side-solution",
+    "id": "f3f1c373-039b-4627-82cd-8928cc463f2c",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/git-tool.sppkg"
+  }
+}
