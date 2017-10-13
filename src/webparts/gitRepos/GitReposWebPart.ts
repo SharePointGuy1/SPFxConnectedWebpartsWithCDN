@@ -9,7 +9,7 @@ import {
 
 import * as strings from 'GitReposWebPartStrings';
 import GitRepos from './components/GitRepos';
-import { IGitReposProps } from './components/IGitReposProps';
+import { IGitReposProps, IGitReposState } from './components/IGitReposPropsAndState';
 
 export interface IGitReposWebPartProps {
   description: string;
@@ -18,10 +18,11 @@ export interface IGitReposWebPartProps {
 export default class GitReposWebPart extends BaseClientSideWebPart<IGitReposWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IGitReposProps > = React.createElement(
+    const element: React.ReactElement<IGitReposProps> = React.createElement(
       GitRepos,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        httpClient: this.context.httpClient
       }
     );
 
