@@ -22,7 +22,9 @@ export default class GitReposWebPart extends BaseClientSideWebPart<IGitReposWebP
       GitRepos,
       {
         description: this.properties.description,
-        httpClient: this.context.httpClient
+        httpClient: this.context.httpClient,
+        eventAggregator: this.context.eventAggregator,
+        subscriberId: this.context.instanceId
       }
     );
 

@@ -27,7 +27,8 @@ export default class GitIdsWebPart extends BaseClientSideWebPart<IGitIdsWebPartP
       GitIds,
       {
         description: this.properties.description,
-        ids: idsArr
+        ids: idsArr,
+        eventAggregator: this.context.eventAggregator
       }
     );
 

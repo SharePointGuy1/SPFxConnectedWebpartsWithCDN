@@ -9,6 +9,7 @@ import { IReactDropdownProps, IReactDropdownState } from './IReactDropdownPropsA
 import * as uifabric from '@uifabric/styling';
 
 import { EventDataSelected } from '../../../libraries/EventData/EventData';
+import { IEvent } from '@microsoft/sp-webpart-base/lib';
 
 
 export default class GitIds extends React.Component<IGitIdsProps, IGitIdsState> {
@@ -56,7 +57,7 @@ export default class GitIds extends React.Component<IGitIdsProps, IGitIdsState> 
 
   public componentDidUpdate(): void {
     console.warn('GitIdsLister: componentDidUpdate');
-    // this._broadcastData();
+    this._broadcastData();
   }
 
   public onSelectedChanged(selectedText: string, selectedIdx: number): void {
@@ -66,6 +67,19 @@ export default class GitIds extends React.Component<IGitIdsProps, IGitIdsState> 
       selected: selectedText,
       selectedIndex: selectedIdx
     });
+  }
+
+  protected _broadcastData(): void {
+    this.props.eventAggregator.raiseEvent(
+      'GitIdEvent:start', {
+        data: {
+          selected: this.state.selected,
+          selectedIndex: this.state.selectedIndex
+        },
+        sourceId: 'GitIdWebPart',
+        targetId: 'GitRepos'
+      } as IEvent<EventDataSelected>
+    );
   }
 
 }
