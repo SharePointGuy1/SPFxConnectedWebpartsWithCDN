@@ -76,11 +76,11 @@ export default class GitRepos extends React.Component<IGitReposProps, IGitReposS
         reposList.innerHTML += '<div title="' + (repo.description ? repo.description : 'No Description') +
           '" class="ms-ListItem is-unread is-selectable">' +
           '<div class="ms-Grid-row ms-sm6 ms-md4 ms-lg2"><span class="ms-ListItem-primaryText">' + repo.name + '</span></div>' +
-          '<div class="ms-Grid-row ms-sm2 ms-md5 ms-lg8"><span class="ms-ListItem-secondaryText">GitHub Clone Url: ' +
+          '<div class="ms-Grid-row ms-sm2 ms-md5 ms-lg8"><span class="ms-ListItem-secondaryText">GitHub Clone Url: <br />' +
           repo.clone_url + '</span></div>' +
           '<div class="ms-Grid-row ms-sm2 ms-md5 ms-lg2 ms-fontColor-white"><span class="ms-ListItem-tertiaryText"><a href="' +
           repo.html_url + '" target="_blank">Go to GitHub Site</a></span></div>' +
-          '</div>';
+          '</div><hr />';
       });
     });
   }
