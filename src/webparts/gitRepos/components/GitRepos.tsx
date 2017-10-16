@@ -35,7 +35,7 @@ export default class GitRepos extends React.Component<IGitReposProps, IGitReposS
               <p className='ms-font-l ms-fontColor-black'>{escape(this.props.description)}</p>
             </div>
             <div
-              className='ms-Grid'>Git Id: {this.state.gitId}
+              className='ms-Grid'>
               <ul className='ms-List ms-List--grid'
                 id='reposList'
                 ref='repos'
