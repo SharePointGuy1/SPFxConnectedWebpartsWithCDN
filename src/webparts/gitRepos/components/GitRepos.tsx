@@ -72,7 +72,7 @@ export default class GitRepos extends React.Component<IGitReposProps, IGitReposS
     reposList.innerHTML = '';
 
     this._getRepos(url).then(repos => {
-      repos.forEach(repo => {
+      repos.map(repo => {
         reposList.innerHTML += '<div title="' + (repo.description ? repo.description : 'No Description') +
           '" class="ms-ListItem is-unread is-selectable">' +
           '<div class="ms-Grid-row ms-sm6 ms-md4 ms-lg2"><span class="ms-ListItem-primaryText">' + repo.name + '</span></div>' +
