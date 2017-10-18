@@ -2,7 +2,7 @@ export interface IReactDropdownProps {
   title: string;
   description: string;
   items: string[];
-  onSelectedChanged(selectedText: string, selectedIdx: number): any;
+  onSelectedChanged(selectedText: string, selectedIdx: number): Function;
 }
 
 export interface IReactDropdownState {
